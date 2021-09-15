@@ -17,9 +17,24 @@ public class App {
         //System.out.println(estoque.getQuantidadeDisponivel(20));
         //System.out.println(estoque.getQuantidadeDisponivel(40));
         
-        Venda venda = new Venda(1);
-        venda.InsereItem(new Produto(1233, "Geladeira", 2500), 1);
-        System.out.println(venda.getValorVenda());
+         Venda venda = new Venda(2);
+         venda.InsereItem(catalogo.getProduto(10),2);
+         System.out.println("Numero da venda: " + venda.getNumero(2));
+         System.out.println("Valor do item " + venda.getTotal());
+         System.out.println("Valor total da venda: " + venda.getValorVenda());
+        
+         
+
+        //  venda.InsereItem(catalogo.getProduto(20),2);
+        //  System.out.println("Valor do item " + venda.getTotal());
+
+        //  venda.InsereItem(catalogo.getProduto(30),3);
+        //  System.out.println("Valor do item " + venda.getTotal());
+         
+         
+        //  System.out.println("Valor total da venda: " + venda.getValorVenda());
+        
+        //  System.out.println("Numero da venda: " + venda.getNumero(2));
     }
 }
 

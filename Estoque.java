@@ -1,10 +1,10 @@
 import java.util.ArrayList;
 
 public class Estoque {
-    private ArrayList<ItemEstoque> itens;
+    private ArrayList<ItemEstoque> itensestoque;
 
     public Estoque() {
-        itens = new ArrayList<ItemEstoque>();
+        itensestoque = new ArrayList<ItemEstoque>();
     }
 
     public boolean adicionaProduto(Produto produto, int quantidadeInicial) {
@@ -14,11 +14,11 @@ public class Estoque {
         if (quantidadeInicial < 0)
             return false;
         
-        return itens.add(new ItemEstoque(produto, quantidadeInicial));
+        return itensestoque.add(new ItemEstoque(produto, quantidadeInicial));
     }
 
     private ItemEstoque getItem(int codigo) {
-        for (ItemEstoque item: itens) {
+        for (ItemEstoque item: itensestoque) {
             if (item.getProduto().getCodigo() == codigo) {
                 return item;
             }

@@ -22,19 +22,14 @@ public class ItemVenda {
         return quantidade;
     }
 
-    public double getPrecoUnitarioCobrado(){
-        return precoUnitarioCobrado;
-    }
-
-    public double getValorItem(){
-        return precoUnitarioCobrado*quantidade;
-    }
-
-    @Override
-    public String toString() {
-        return "ItemVenda [numero=" + numero + ", precoUnitarioCobrado=" + precoUnitarioCobrado + ", produto=" + produto
-                + ", quantidade=" + quantidade + "]";
-    }
+     public double getPrecoUnitarioCobrado(){
+         precoUnitarioCobrado = produto.getPrecoUnitario();
+         return precoUnitarioCobrado;
+     }
 
     
+    public double getValorItem(){
+        return getPrecoUnitarioCobrado()*quantidade;
+    }
+
 }

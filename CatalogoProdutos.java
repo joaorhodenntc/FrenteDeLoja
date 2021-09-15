@@ -26,7 +26,10 @@ public class CatalogoProdutos {
         //         return produto;
         //     }
         // }
-
+        for (Produto produto: produtos) {
+            if (produto.getCodigo() != codigo)
+                return null;
+        }
         return null;
     }
 }
