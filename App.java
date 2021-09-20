@@ -17,24 +17,9 @@ public class App {
         //System.out.println(estoque.getQuantidadeDisponivel(20));
         //System.out.println(estoque.getQuantidadeDisponivel(40));
         
-         Venda venda = new Venda(2);
-         venda.InsereItem(catalogo.getProduto(10),2);
-         System.out.println("Numero da venda: " + venda.getNumero(2));
-         System.out.println("Valor do item " + venda.getTotal());
-         System.out.println("Valor total da venda: " + venda.getValorVenda());
-        
-         
-
-        //  venda.InsereItem(catalogo.getProduto(20),2);
-        //  System.out.println("Valor do item " + venda.getTotal());
-
-        //  venda.InsereItem(catalogo.getProduto(30),3);
-        //  System.out.println("Valor do item " + venda.getTotal());
-         
-         
-        //  System.out.println("Valor total da venda: " + venda.getValorVenda());
-        
-        //  System.out.println("Numero da venda: " + venda.getNumero(2));
+        Venda v1 = new Venda(10);
+        v1.InsereItem(catalogo.getProduto(20), 1);
+        v1.conclui();
     }
 }
 

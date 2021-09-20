@@ -5,7 +5,6 @@ public class Venda {
     private ArrayList<ItemVenda> itens;
     private final double imposto = 0.25;
     private double valorTotal;
-    private double valorSemDesconto;
 
     public Venda (int numero) {
         this.numero = numero;
@@ -43,29 +42,43 @@ public class Venda {
     return true;
     }
 
+    public boolean conclui () {
+        if (itens.size()<1) 
+            return false;
+        imprimeRecibo();
+        return true;
+    }
+
+    public void imprimeRecibo() {
+        System.out.println("Numero da venda: " + getNumero(numero));
+        System.out.println("Valor do item " + getTotal());
+        System.out.println("Valor total da venda: " + getValorVenda());     
+    }
+
+
     public double getTotal(){
          for (ItemVenda item : itens) {
          valorTotal = item.getValorItem();
              }
-         
         return valorTotal;
     }
 
-     public double getImposto() {
-         return imposto;
-     }
+    public double getImposto () {
+        return imposto;
+    }
 
-    public double getDesconto_imposto() {
-        if (getTotal()<250) {
-            valorSemDesconto = getTotal()*getImposto();
-            return getTotal()+valorSemDesconto;}
-        double valorComDesconto = getTotal()*0.10;
-        double total = (getTotal()-valorComDesconto) * getImposto();
-        return getTotal() + total;
+    public double getDesconto () {
+        if (getTotal()<250)
+            return 0;
+        double valorDesconto = getTotal()*0.10;
+        return valorDesconto;
     }
 
     public double getValorVenda() {
-        return getDesconto_imposto();
+       double valorComDesconto = (getTotal()-getDesconto());
+       double valorComImposto =  valorComDesconto * getImposto();
+       double valorFinalcomImposto =  valorComDesconto + valorComImposto;
+       return valorFinalcomImposto;
     }
 
    }
