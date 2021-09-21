@@ -20,12 +20,6 @@ public class CatalogoProdutos {
                 return produto;
         }
 
-        // for (int i = 0; i < produtos.size(); i++) {
-        //     Produto produto = produtos.get(i);
-        //     if (produto.getCodigo() == codigo) {
-        //         return produto;
-        //     }
-        // }
         for (Produto produto: produtos) {
             if (produto.getCodigo() != codigo)
                 return null;

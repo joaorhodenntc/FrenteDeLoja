@@ -16,10 +16,20 @@ public class App {
         
         //System.out.println(estoque.getQuantidadeDisponivel(20));
         //System.out.println(estoque.getQuantidadeDisponivel(40));
+
         
         Venda v1 = new Venda(10);
-        v1.InsereItem(catalogo.getProduto(20), 1);
+        v1.InsereItem(catalogo.getProduto(20), 2);
+        v1.imprimeRecibo();
         v1.conclui();
+
+        HistoricoVendas historico = new HistoricoVendas();
+        historico.adicionaVenda(v1);
+        historico.getVenda(10);
+        historico.getUltimasVendas();
+
+
+        
     }
 }
 
